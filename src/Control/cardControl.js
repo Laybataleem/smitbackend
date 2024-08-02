@@ -6,14 +6,15 @@ const CreatCard =async (req,res)=>{  ///
     try {
         const {title ,image} = req.body;
         const data = {title,image };
-        const user = new Card(data);
+        const card = new Card(data);
 
-        console.log(user);
+        console.log(card);
+        // ap suy page sbatye meeting start hogye 
 
-        // await Card.save();
+        await card.save();
         res.status(201).send({    
             message: "Crad has being Created",
-            user
+            card
         });
     } catch (e) {
         console.log(e);
